@@ -2,7 +2,8 @@
 <div class="content" role="main">
   <app-tooltip 
    *ngFor="let tooltip of tooltips" 
-   [tooltip]="tooltip">
+   [tooltip]="tooltip" 
+   (tooltipExpired)="onTooltipExpired($event)">
   </app-tooltip>
 </div>
 

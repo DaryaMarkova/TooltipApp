@@ -14,9 +14,13 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.tooltipService.show({id: 1, message: "First tooltip", duration: 3000 })
-    this.tooltipService.show({id: 2, message: "Second tooltip", duration: 1000 })
-    this.tooltipService.show({id: 3, message: "Third tooltip", duration: 3000 })
+    this.tooltipService.show({ id: 1, message: "First tooltip", duration: 3000 })
+    this.tooltipService.show({ id: 2, message: "Second tooltip", duration: 1000 })
+    this.tooltipService.show({ id: 3, message: "Third tooltip", duration: 5000 })
+  }
+
+  onTooltipExpired = (tooltipId: number) => {
+    this.tooltipService.hide(tooltipId);
   }
 
   get tooltips() {
